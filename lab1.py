@@ -2,7 +2,6 @@ import numpy as np
 import cv2
 from time import time
 import matplotlib.pyplot as plt
-from tqdm import tqdm
 
 def median_filter_numpy(image, kernel_size):
     if kernel_size % 2 == 0:
@@ -30,7 +29,7 @@ if __name__ == "__main__":
     numpy_time = []
     cv_time = []
 
-    for size in tqdm(kernel_sizes):
+    for size in kernel_sizes:
         start = time()
         numpy_image = median_filter_numpy(image, size)
         numpy_time.append(time() - start)
